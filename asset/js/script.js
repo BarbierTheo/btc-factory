@@ -85,6 +85,7 @@ function buyAutominer() {
         bitcoin = bitcoin - autominerPrice
         document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
         localStorage.setItem('autominer', autominer)
+        autominerTimer = (0.004 * autominer)
         refreshdom()
 
     }
