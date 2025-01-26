@@ -4,7 +4,7 @@ function getRandomNumber() {
 
 function randomQuotes() {
     randomNumber = getRandomNumber()
-    fetch("/asset/js/json/quotes.json")
+    fetch("./asset/js/json/quotes.json")
         .then((response) => response.json())
         .then((data) => {
             document.getElementById('quotes').innerHTML += `
