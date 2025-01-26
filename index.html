@@ -82,17 +82,17 @@
                     </div>
                     <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
                 </div>
-                <div class="flex m-1 p-1 hover:bg-gray-300 transition-all duration-100 cursor-pointer gap-3">
+                <button class="flex m-2 p-2 hover:bg-gray-300 transition-all duration-100 cursor-pointer gap-3" id="autominer">
                     <img src="./asset/img/icons/Document.png" alt=""
                         class="w-[3rem] h-[3rem] self-center cursor-pointer">
-                    <button class="flex flex-col items-start cursor-pointer">
+                    <div class="flex flex-col items-start cursor-pointer">
                         <p class="font-semibold">autominer</p>
-                        <p class="text-sm">permet de miner automatiquement du bitcoin</p>
-                        <p>prix : 0.0002 btc</p>
-                        <p>possédé : 0</p>
-                        <p>fabrique un total de : 0 btc/s</p>
-                    </button>
-                </div>
+                        <p class="text-left">permet de miner automatiquement du bitcoin</p>
+                        <p class="text-sm text-left">prix : <span id="autominerPrice"></span> btc</p>
+                        <p class="text-sm text-left">possédé : <span id="autominerCount"></span></p>
+                        <p class="text-sm text-left">fabrique un total de : <span id="autominerStats">0</span> btc/s</p>
+                    </div>
+                </button>
             </div>
 
         </div>
