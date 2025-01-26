@@ -27,8 +27,9 @@
                         </div>
                         <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
                     </div>
-                    <p class="mt-2 ml-1">bitcoins : 0</p>
+                    <p class="mt-2 ml-1">bitcoins : <span id="bitcoinShow">0</span> btc</p>
                     <p class="ml-1">bitcoins par seconde : 0</p>
+                    <button id="reset" class="cursor-pointer"><img src="./asset/img/icons/Trash.png" class="w-12 h-12" alt=""></button>
                 </div>
 
                 <!-- NEWS -->
@@ -62,10 +63,11 @@
                 </div>
                 <div class="flex flex-col justify-center self-center h-full gap-8 text-center">
                     <p class="text-3xl font-bold self-center">FREE BITCOIN</p>
-                    <button class="self-center cursor-pointer"><img src="./asset/img/icons/Warning.png" alt=""
+                    <button class="self-center cursor-pointer" id="miner"><img src="./asset/img/icons/Warning.png" alt=""
                             class="w-[8rem]"></button>
-                    <p>clics : 0</p>
-                    <p>encore <span>10000</span> clics pour un bitcoin complet !</p>
+                    <p>clics : <span id="clicksMiner">0</span></p>
+                    <p><span id="minerGen">0</span> bitcoins générés</p>
+                    <p>encore <span id="stillMiner">10000</span> clics pour un bitcoin complet !</p>
 
                 </div>
             </div>
