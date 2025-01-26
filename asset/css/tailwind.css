@@ -830,6 +830,9 @@
   .h-\[50\%\] {
     height: 50%;
   }
+  .h-fit {
+    height: fit-content;
+  }
   .h-full {
     height: 100%;
   }
