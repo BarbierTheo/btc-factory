@@ -29,7 +29,13 @@
                     </div>
                     <p class="mt-2 ml-1">bitcoins : <span id="bitcoinShow">0</span> btc</p>
                     <p class="ml-1">bitcoins par seconde : <span id="bitcoinsPerSec">0</span></p>
-                    <button id="reset" class="cursor-pointer"><img src="./asset/img/icons/Trash.png" class="w-12 h-12"
+
+                    
+                    <p class="text-sm text-left mt-2 ml-1">autominer possédé : <span id="autominerCount"></span></p>
+                    <p class="text-sm text-left ml-1">fabriquant un total de : <span id="autominerStats">0</span> btc/s</p>
+
+
+                    <button id="reset" class="cursor-pointer self-center"><img src="./asset/img/icons/Trash.png" class="my-8 w-12 h-12"
                             alt=""></button>
                 </div>
 
@@ -62,10 +68,22 @@
                     </div>
                     <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
                 </div>
-                <div class="flex w-full mt-1">
-                    <div class="px-8 py-1 bg-orange-500">
-                        <p>miner</p>
+                <div class="flex w-full mt-1 gap-2">
+                    <div class="px-8 py-1 bg-orange-500 cursor-pointer">
+                        <p class="self-center">miner</p>
                     </div>
+                    <div class="px-8 py-1 bg-slate-500 cursor-pointer">
+                        <p class="self-center">locked</p>
+                    </div>
+                    <div class="px-8 py-1 bg-slate-500 cursor-pointer">
+                        <p class="self-center">locked</p>
+                    </div>
+                </div>
+                <div class="flex w-full mt-1 gap-2">
+                        <img src="./asset/img/icons/Left Arrow.png" alt="" class="w-[2rem] ml-1">
+                        <img src="./asset/img/icons/Right Arrow.png" alt="" class="w-[2rem]">
+                        <p class="self-center bg-white py-1 w-full pl-2">https://yournewlifestartnow.com/</p>
+                        <p class="self-center mr-1 bg-blue-400 py-1 px-3 cursor-pointer">rechercher</p>
                 </div>
                 <div class="flex flex-col justify-center self-center h-full gap-8 text-center">
                     <p class="text-3xl font-bold self-center">FREE BITCOIN</p>
@@ -96,8 +114,6 @@
                         <p class="font-semibold">autominer</p>
                         <p class="text-left">permet de miner automatiquement du bitcoin</p>
                         <p class="text-sm text-left">prix : <span id="autominerPrice"></span> btc</p>
-                        <p class="text-sm text-left">possédé : <span id="autominerCount"></span></p>
-                        <p class="text-sm text-left">fabrique un total de : <span id="autominerStats">0</span> btc/s</p>
                     </div>
                 </button>
             </div>
