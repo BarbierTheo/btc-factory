@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btc factory</title>
+    <!-- npx @tailwindcss/cli -i ./asset/css/style.css -o ./asset/css/tailwind.css --watch -->
+    <link rel="stylesheet" href="./asset/css/normalize.css">
+    <link rel="stylesheet" href="./asset/css/tailwind.css">
+    <link rel="stylesheet" href="./asset/css/custom.css">
+</head>
+
+<body class="">
+    <div class="bg-[url(/asset/img/wallpaper.png)] h-screen object-contain object-center">
+
+        <div class="flex flex-col lg:flex-row p-8 lg:p-18 h-full gap-4">
+
+            <div class="flex flex-col w-[100%] lg:w-[30%] h-full gap-6">
+
+                <!-- INFO BTC -->
+                <div class="flex flex-col bg-gray-200 p-1 h-[50%] shadow-sm">
+                    <div class="flex justify-between bg-gradient-to-r from-blue-950 to-blue-900 py-1 px-2">
+                        <div class="flex gap-2">
+                            <img src="./asset/img/icons/Document.png" alt="" class="w-[2rem] h-[2rem] self-center">
+                            <p class="text-gray-100 title self-center">infos.txt</p>
+                        </div>
+                        <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                    </div>
+                    <p class="mt-2 ml-1">bitcoins : 0</p>
+                    <p class="ml-1">bitcoins par seconde : 0</p>
+                </div>
+
+                <!-- NEWS -->
+                <div class="flex flex-col bg-gray-200 p-1 h-[50%] shadow-sm">
+                    <div class="flex justify-between bg-gradient-to-r from-blue-950 to-blue-900 py-1 px-2">
+                        <div class="flex gap-2">
+                            <img src="./asset/img/icons/Mail.png" alt="" class="w-[2rem] h-[2rem] self-center">
+                            <p class="text-gray-100 title self-center">news</p>
+                        </div>
+                        <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                    </div>
+                    <p class="mt-2 ml-1">test</p>
+                </div>
+
+            </div>
+
+
+            <!-- JOB -->
+            <div class="flex flex-col lg:w-[40%] bg-gray-200 p-1 shadow-sm">
+                <div class="flex justify-between bg-gradient-to-r from-blue-950 to-blue-900 py-1 px-2">
+                    <div class="flex gap-2">
+                        <img src="./asset/img/icons/Suitcase.png" alt="" class="w-[2rem] h-[2rem] self-center">
+                        <p class="text-gray-100 title self-center">travail</p>
+                    </div>
+                    <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                </div>
+                <div class="flex w-full mt-1">
+                    <div class="px-8 py-1 bg-orange-500">
+                        <p>miner</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center self-center h-full gap-8 text-center">
+                    <p class="text-3xl font-bold self-center">FREE BITCOIN</p>
+                    <button class="self-center cursor-pointer"><img src="./asset/img/icons/Warning.png" alt=""
+                            class="w-[8rem]"></button>
+                    <p>clics : 0</p>
+                    <p>encore <span>10000</span> clics pour un bitcoin complet !</p>
+
+                </div>
+            </div>
+
+
+            <!-- ACHAT -->
+            <div class="flex flex-col lg:w-[30%] bg-gray-200 p-1 shadow-sm">
+                <div class="flex justify-between bg-gradient-to-r from-blue-950 to-blue-900 py-1 px-2">
+                    <div class="flex gap-2">
+                        <img src="./asset/img/icons/Star.png" alt="" class="w-[2rem] h-[2rem] self-center">
+                        <p class="text-gray-100 title self-center">achats</p>
+                    </div>
+                    <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                </div>
+                <div class="flex m-1 p-1 hover:bg-gray-300 transition-all duration-100 cursor-pointer gap-3">
+                    <img src="./asset/img/icons/Document.png" alt=""
+                        class="w-[3rem] h-[3rem] self-center cursor-pointer">
+                    <button class="flex flex-col items-start cursor-pointer">
+                        <p class="font-semibold">autominer</p>
+                        <p class="text-sm">permet de miner automatiquement du bitcoin</p>
+                        <p>prix : 0.0002 btc</p>
+                        <p>possédé : 0</p>
+                        <p>fabrique un total de : 0 btc/s</p>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="./asset/js/script.js"></script>
+</body>
+
+</html>
