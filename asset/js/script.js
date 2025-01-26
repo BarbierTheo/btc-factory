@@ -53,7 +53,7 @@ if (localStorage.getItem('autominer') == null || localStorage.getItem('autominer
 }
 
 
-let autominerPrice = (0.01 * autominer)
+let autominerPrice = 0.01 + (0.01 * autominer)
 
 function buyAutominer() {
 
@@ -64,21 +64,22 @@ function buyAutominer() {
         document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
         document.getElementById('autominerCount').innerText = autominer
         localStorage.setItem('autominer', autominer)
+        document.getElementById('autominerStats').innerHTML = round(0.004 * autominer)
+        document.getElementById('autominerPrice').innerText = round(0.01 + (0.01 * autominer))
+        document.getElementById('bitcoinsPerSec').innerText = round(0.004 * autominer)
     }
 
 
 }
 
 document.getElementById('autominer').addEventListener('click', buyAutominer)
-
-let autominerPerSeconds = (0.002 * autominer)
-
+let coinsAutomine = 0
 function automine() {
     if (autominer >= 1) {
 
-        bitcoin = bitcoin + autominerPerSeconds
+        bitcoin = bitcoin + (0.004 * autominer)
         document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
-        document.getElementById('autominerStats').innerHTML = autominerPerSeconds
+        coinsAutomine = (0.004 * autominer)
         console.log('AUTOMINE')
 
     }
@@ -92,8 +93,13 @@ setInterval(function () {
 
 
 document.getElementById('autominerCount').innerText = autominer
-document.getElementById('autominerPrice').innerText = autominerPrice
-document.getElementById('autominerStats').innerText = autominerPerSeconds
+document.getElementById('autominerPrice').innerText = round(0.01 + (0.01 * autominer))
+document.getElementById('autominerStats').innerText = (0.004 * autominer)
+
+
+// BITCOINS PAR SEC
+
+document.getElementById('bitcoinsPerSec').innerText = (0.004 * autominer)
 
 // ENREGISTREMENT des BITCOINS
 

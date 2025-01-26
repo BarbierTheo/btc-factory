@@ -704,6 +704,9 @@
   .my-1 {
     margin-block: calc(var(--spacing) * 1);
   }
+  .my-2 {
+    margin-block: calc(var(--spacing) * 2);
+  }
   .my-6 {
     margin-block: calc(var(--spacing) * 6);
   }
@@ -1590,6 +1593,12 @@
   .bg-slate-500 {
     background-color: var(--color-slate-500);
   }
+  .bg-slate-600 {
+    background-color: var(--color-slate-600);
+  }
+  .bg-slate-600\/50 {
+    background-color: color-mix(in oklab, var(--color-slate-600) 50%, transparent);
+  }
   .-bg-conic {
     --tw-gradient-position: in oklab,;
     background-image: conic-gradient(var(--tw-gradient-stops));
@@ -1867,6 +1876,10 @@
   .text-3xl {
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
