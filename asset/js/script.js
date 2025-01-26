@@ -64,15 +64,15 @@ setInterval(function () {
 
 // ACHAT AUTOMINER
 
-    let multiplierAutominer = 1
-    if (autominer > 10) {
-        multiplierAutominer = 2
-    } else if (autominer > 30) {
-        multiplierAutominer = 3
-    }
+let multiplierAutominer = 1
+if (autominer > 10) {
+    multiplierAutominer = 2
+} else if (autominer > 30) {
+    multiplierAutominer = 3
+}
 
 
-let autominerPrice = round(0.01 + (0.02 * autominer)*multiplierAutominer)
+let autominerPrice = round(0.01 + (0.02 * autominer) * multiplierAutominer)
 
 function buyAutominer() {
 
@@ -80,7 +80,7 @@ function buyAutominer() {
     // console.log(autominerPrice)
 
     if (bitcoin >= autominerPrice) {
-        autominerPrice = round(0.01 + (0.02 * autominer)*multiplierAutominer)
+        autominerPrice = round(0.01 + (0.02 * autominer) * multiplierAutominer)
         autominer = (autominer + 1)
         bitcoin = bitcoin - autominerPrice
         document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
