@@ -6,7 +6,6 @@ function refreshdom() {
     document.getElementById('autominerStats').innerText = round(autominerTimer)
     document.getElementById('bitcoinsPerSec').innerText = round(autominerTimer+totalBonus)
     document.getElementById('bonusPrice1').innerText = round(bonusPrice)
-    console.log(bonusPrice)
 
 }
 
@@ -121,7 +120,7 @@ function buyTotalBonus () {
         bonus++
     }
     refreshdom()
-    console.log(totalBonus)
+    // console.log(totalBonus)
 }
 
 document.getElementById('bonus1').addEventListener('click', buyTotalBonus)
