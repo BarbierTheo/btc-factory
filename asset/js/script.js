@@ -4,7 +4,9 @@ function refreshdom() {
     document.getElementById('autominerCount').innerText = round(autominer)
     document.getElementById('autominerPrice').innerText = round(autominerPrice)
     document.getElementById('autominerStats').innerText = round(autominerTimer)
-    document.getElementById('bitcoinsPerSec').innerText = round(autominerTimer)
+    document.getElementById('bitcoinsPerSec').innerText = round(autominerTimer+totalBonus)
+    document.getElementById('bonusPrice1').innerText = round(bonusPrice)
+    console.log(bonusPrice)
 
 }
 
@@ -45,21 +47,16 @@ if (localStorage.getItem('autominer') == null || localStorage.getItem('autominer
 }
 
 let autominerTimer = (0.004 * autominer)
+let autominerBonus = 1
 
 function automine() {
     if (autominer >= 1) {
-        bitcoin = bitcoin + autominerTimer
-        document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
-        console.log('AUTOMINE')
-
+        bitcoin = bitcoin + (autominerTimer*autominerBonus)
     }
 }
 
 automine()
 
-setInterval(function () {
-    automine()
-}, 5000)
 
 
 // ACHAT AUTOMINER
@@ -94,6 +91,55 @@ function buyAutominer() {
 }
 
 document.getElementById('autominer').addEventListener('click', buyAutominer)
+
+
+
+
+
+
+
+// BONUS TOTAL
+
+let bonus = 0
+
+let totalItems = autominerTimer
+let totalBonus = totalItems*(bonus)
+
+function totalBonusAdd () {
+    totalBonus = totalItems*(bonus)
+    bitcoin = bitcoin+totalBonus
+}
+
+let bonusPrice = 5
+
+// ACHAT BONUS
+
+function buyTotalBonus () {
+
+    if (bitcoin > bonusPrice){
+        bitcoin = bitcoin - bonusPrice
+        bonus++
+    }
+    refreshdom()
+    console.log(totalBonus)
+}
+
+document.getElementById('bonus1').addEventListener('click', buyTotalBonus)
+
+
+
+
+
+
+// INTERVALLE AUTOMATIQUE CHARGEMENT DES ACTIFS
+
+setInterval(function () {
+    automine()
+    refreshdom()
+    totalBonusAdd()
+}, 3000)
+
+
 
 refreshdom()
 
