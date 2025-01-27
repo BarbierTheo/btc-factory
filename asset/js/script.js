@@ -3,8 +3,8 @@ function refreshdom() {
     document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
     document.getElementById('autominerCount').innerText = round(autominer)
     document.getElementById('autominerPrice').innerText = round(autominerPrice)
-    document.getElementById('autominerStats').innerText = round(autominerTimer)
-    document.getElementById('bitcoinsPerSec').innerText = round(autominerTimer+totalBonus)
+    document.getElementById('autominerStats').innerText = round(autominerTimer + (autominer * (0.01 * bonus)))
+    document.getElementById('bitcoinsPerSec').innerText = round(autominerTimer + (autominer * (0.01 * bonus)))
     document.getElementById('bonusPrice1').innerText = round(bonusPrice)
 
 }
@@ -50,7 +50,7 @@ let autominerBonus = 1
 
 function automine() {
     if (autominer >= 1) {
-        bitcoin = bitcoin + (autominerTimer*autominerBonus)
+        bitcoin = bitcoin + (autominerTimer * autominerBonus)
     }
 }
 
@@ -75,7 +75,7 @@ function buyAutominer() {
     // console.log(bitcoin)
     // console.log(autominerPrice)
 
-    
+
 
     if (bitcoin > autominerPrice) {
         autominer = (autominer + 1)
@@ -102,22 +102,23 @@ document.getElementById('autominer').addEventListener('click', buyAutominer)
 let bonus = 0
 
 let totalItems = autominerTimer
-let totalBonus = totalItems*(bonus)
+let totalBonus = totalItems * (0.01 * (bonus))
 
-function totalBonusAdd () {
-    bitcoin = bitcoin+totalBonus
+function totalBonusAdd() {
+    bitcoin = bitcoin + totalBonus
 }
 
-let bonusPrice = 5
+let bonusPrice = 0.1
 
 // ACHAT BONUS
 
-function buyTotalBonus () {
+function buyTotalBonus() {
 
-    if (bitcoin > bonusPrice){
+    if (bitcoin > bonusPrice) {
         bitcoin = bitcoin - bonusPrice
         bonus++
-        totalBonus = totalItems*(bonus)
+        totalItems = autominerTimer
+        totalBonus = totalItems * (0.01 * (bonus))
     }
     refreshdom()
     // console.log(totalBonus)
