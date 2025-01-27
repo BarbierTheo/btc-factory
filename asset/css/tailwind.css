@@ -698,12 +698,6 @@
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
-  .m-8 {
-    margin: calc(var(--spacing) * 8);
-  }
-  .mx-1 {
-    margin-inline: calc(var(--spacing) * 1);
-  }
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
   }
@@ -718,12 +712,6 @@
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
-  }
-  .mt-8 {
-    margin-top: calc(var(--spacing) * 8);
-  }
-  .mr-1 {
-    margin-right: calc(var(--spacing) * 1);
   }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
@@ -830,8 +818,11 @@
   .h-\[50\%\] {
     height: 50%;
   }
-  .h-fit {
-    height: fit-content;
+  .h-\[60\%\] {
+    height: 60%;
+  }
+  .h-\[80vh\] {
+    height: 80vh;
   }
   .h-full {
     height: 100%;
@@ -842,14 +833,20 @@
   .max-h-\[30rem\] {
     max-height: 30rem;
   }
-  .max-h-\[50rem\] {
-    max-height: 50rem;
+  .max-h-\[50vh\] {
+    max-height: 50vh;
+  }
+  .max-h-\[100vh\] {
+    max-height: 100vh;
   }
   .max-h-none {
     max-height: none;
   }
   .max-h-screen {
     max-height: 100vh;
+  }
+  .min-h-\[50vh\] {
+    min-height: 50vh;
   }
   .min-h-none {
     min-height: none;
@@ -877,9 +874,6 @@
   }
   .w-\[100\%\] {
     width: 100%;
-  }
-  .w-\[1rem\] {
-    width: 1rem;
   }
   .w-full {
     width: 100%;
@@ -1026,9 +1020,6 @@
   }
   .animate-none {
     animation: none;
-  }
-  .cursor-pointer {
-    cursor: pointer;
   }
   .touch-pinch-zoom {
     --tw-pinch-zoom: pinch-zoom;
@@ -1398,6 +1389,9 @@
   .overflow-y-auto {
     overflow-y: auto;
   }
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
   .scroll-auto {
     scroll-behavior: auto;
   }
@@ -1532,12 +1526,6 @@
   }
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
-  }
-  .bg-blue-400 {
-    background-color: var(--color-blue-400);
-  }
-  .bg-blue-800 {
-    background-color: var(--color-blue-800);
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
@@ -1758,9 +1746,6 @@
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
-  }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -2377,6 +2362,11 @@
   .lg\:flex {
     @media (width >= 64rem) {
       display: flex;
+    }
+  }
+  .lg\:h-\[50\%\] {
+    @media (width >= 64rem) {
+      height: 50%;
     }
   }
   .lg\:h-screen {

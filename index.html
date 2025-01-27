@@ -86,7 +86,7 @@
 
 
             <!-- ACHAT -->
-            <div class="flex flex-col lg:w-[30%] bg-gray-200 p-1 shadow-sm">
+            <div class="flex flex-col lg:w-[30%] bg-gray-200 p-1 shadow-sm min-h-[50vh] max-h-[100vh]">
                 <div class="flex justify-between bg-gradient-to-r from-blue-950 to-blue-900 py-1 px-2">
                     <div class="flex gap-2">
                         <img src="./asset/img/icons/Star.png" alt="" class="w-[2rem] h-[2rem] self-center">
@@ -94,16 +94,41 @@
                     </div>
                     <div class="text-white self-center px-2 py-1 bg-red-700 font-bold pointer">X</div>
                 </div>
-                <button class="flex m-2 p-2 hover:bg-gray-300 transition-all duration-100 pointer gap-3"
-                    id="autominer">
-                    <img src="./asset/img/icons/Document.png" alt=""
-                        class="w-[3rem] h-[3rem] self-center pointer">
-                    <div class="flex flex-col items-start pointer">
-                        <p class="font-semibold pointer">autominer</p>
-                        <p class="text-left pointer">permet de miner automatiquement du bitcoin</p>
-                        <p class="text-sm text-left pointer">prix : <span id="autominerPrice"></span> btc</p>
-                    </div>
-                </button>
+
+                <p class="ml-2 mt-2 font-semibold text-lg">actifs</p>
+                <hr class="mx-2">
+
+                <div id="actifs" class="lg:h-[50%] overflow-y-auto">
+
+                    <button class="flex m-2 p-2 hover:bg-gray-300 transition-all duration-100 pointer gap-3 w-full"
+                        id="autominer">
+                        <img src="./asset/img/icons/Document.png" alt="" class="w-[3rem] h-[3rem] self-center pointer">
+                        <div class="flex flex-col items-start pointer">
+                            <p class="font-semibold pointer">autominer</p>
+                            <p class="text-left pointer">permet de miner automatiquement du bitcoin</p>
+                            <p class="text-sm text-left pointer">prix : <span id="autominerPrice"></span> btc</p>
+                        </div>
+                    </button>
+
+                </div>
+
+                <p class="ml-2 mt-2 font-semibold text-lg">formations</p>
+                <hr class="mx-2">
+
+                <div id="passifs" class="overflow-y-auto">
+
+                    <button class="flex m-2 p-2 hover:bg-gray-300 transition-all duration-100 pointer gap-3 w-full"
+                        id="bonus1">
+                        <img src="./asset/img/icons/Folder.png" alt="" class="w-[3rem] h-[3rem] self-center pointer">
+                        <div class="flex flex-col items-start pointer">
+                            <p class="font-semibold pointer">les pdfs que Washington recherche</p>
+                            <p class="text-left pointer">améliore votre rendement total de 10%</p>
+                            <p class="text-sm text-left pointer">prix : <span class="bonusPrice1"></span></p>
+                        </div>
+                    </button>
+
+                </div>
+
             </div>
 
         </div>
