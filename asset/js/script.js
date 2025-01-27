@@ -105,7 +105,6 @@ let totalItems = autominerTimer
 let totalBonus = totalItems*(bonus)
 
 function totalBonusAdd () {
-    totalBonus = totalItems*(bonus)
     bitcoin = bitcoin+totalBonus
 }
 
@@ -118,6 +117,7 @@ function buyTotalBonus () {
     if (bitcoin > bonusPrice){
         bitcoin = bitcoin - bonusPrice
         bonus++
+        totalBonus = totalItems*(bonus)
     }
     refreshdom()
     // console.log(totalBonus)
