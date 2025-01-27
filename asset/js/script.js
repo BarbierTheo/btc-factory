@@ -72,25 +72,25 @@ if (autominer > 10) {
 }
 
 
-let autominerPrice = round(0.01 + (0.02 * autominer) * multiplierAutominer)
+let autominerPrice = 0.01 + (0.05 * autominer) * multiplierAutominer
 
 function buyAutominer() {
 
     // console.log(bitcoin)
     // console.log(autominerPrice)
 
-    if (bitcoin >= autominerPrice) {
-        autominerPrice = round(0.01 + (0.02 * autominer) * multiplierAutominer)
+    
+
+    if (bitcoin > autominerPrice) {
         autominer = (autominer + 1)
         bitcoin = bitcoin - autominerPrice
         document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
         localStorage.setItem('autominer', autominer)
         autominerTimer = (0.004 * autominer)
-        refreshdom()
-
+        autominerPrice = 0.01 + (0.05 * autominer) * multiplierAutominer
     }
 
-
+    refreshdom()
 }
 
 document.getElementById('autominer').addEventListener('click', buyAutominer)
