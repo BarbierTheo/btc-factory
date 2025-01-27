@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-body {
+* {
     font-family: 'Space Mono';
+    cursor: url('../img/cursor/cursor.png'), auto;
+}
+
+.pointer {
+    cursor: url('../img/cursor/pointer.png'), auto;
+}
+
+.locked {
+    cursor: url('../img/cursor/not-available.png'), auto;
+    cursor
 }
 
 .title {

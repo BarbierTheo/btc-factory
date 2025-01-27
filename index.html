@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./asset/css/custom.css">
 </head>
 
-<body class="bg-[#445920]">
+<body class="bg-[#445920] min-h-screen min-w-screen">
     <div class="windowswallpaper lg:h-screen object-contain object-center">
 
         <div class="flex flex-col lg:flex-row p-8 lg:p-18 h-full gap-4">
@@ -25,7 +25,7 @@
                             <img src="./asset/img/icons/Document.png" alt="" class="w-[2rem] h-[2rem] self-center">
                             <p class="text-gray-100 title self-center">infos.txt</p>
                         </div>
-                        <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                        <div class="text-white self-center px-2 py-1 bg-red-700 font-bold pointer">X</div>
                     </div>
                     <p class="mt-2 ml-1">bitcoins : <span id="bitcoinShow">0</span> btc</p>
                     <p class="ml-1">bitcoins par seconde : <span id="bitcoinsPerSec">0</span></p>
@@ -36,8 +36,8 @@
                     </p>
 
 
-                    <button id="reset" class="cursor-pointer self-center"><img src="./asset/img/icons/Trash.png"
-                            class="my-8 w-12 h-12" alt=""></button>
+                    <button id="reset" class="self-center"><img src="./asset/img/icons/Trash.png"
+                            class="my-8 w-12 h-12 pointer" alt=""></button>
                 </div>
 
                 <!-- NEWS -->
@@ -47,7 +47,7 @@
                             <img src="./asset/img/icons/Mail.png" alt="" class="w-[2rem] h-[2rem] self-center">
                             <p class="text-gray-100 title self-center">news</p>
                         </div>
-                        <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                        <div class="text-white self-center px-2 py-1 bg-red-700 font-bold pointer">X</div>
                     </div>
                     <div class="flex flex-col-reverse p-2 overflow-y-auto max-h-[30rem]" id="quotes">
 
@@ -64,13 +64,13 @@
                         <img src="./asset/img/icons/Suitcase.png" alt="" class="w-[2rem] h-[2rem] self-center">
                         <p class="text-gray-100 title self-center">travail</p>
                     </div>
-                    <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                    <div class="text-white self-center px-2 py-1 bg-red-700 font-bold pointer">X</div>
                 </div>
                 <div class="flex w-full mt-1 gap-2">
-                    <div class="px-8 py-1 bg-orange-500 cursor-pointer">
+                    <div class="px-8 py-1 bg-orange-500 pointer">
                         <p class="self-center">miner</p>
                     </div>
-                    <div class="px-8 py-1 bg-slate-500 cursor-pointer">
+                    <div class="px-8 py-1 bg-slate-500 locked">
                         <p class="self-center">locked</p>
                     </div>
                 </div>
@@ -92,16 +92,16 @@
                         <img src="./asset/img/icons/Star.png" alt="" class="w-[2rem] h-[2rem] self-center">
                         <p class="text-gray-100 title self-center">achats</p>
                     </div>
-                    <div class="text-white self-center px-2 py-1 bg-red-700 font-bold cursor-pointer">X</div>
+                    <div class="text-white self-center px-2 py-1 bg-red-700 font-bold pointer">X</div>
                 </div>
-                <button class="flex m-2 p-2 hover:bg-gray-300 transition-all duration-100 cursor-pointer gap-3"
+                <button class="flex m-2 p-2 hover:bg-gray-300 transition-all duration-100 pointer gap-3"
                     id="autominer">
                     <img src="./asset/img/icons/Document.png" alt=""
-                        class="w-[3rem] h-[3rem] self-center cursor-pointer">
-                    <div class="flex flex-col items-start cursor-pointer">
-                        <p class="font-semibold">autominer</p>
-                        <p class="text-left">permet de miner automatiquement du bitcoin</p>
-                        <p class="text-sm text-left">prix : <span id="autominerPrice"></span> btc</p>
+                        class="w-[3rem] h-[3rem] self-center pointer">
+                    <div class="flex flex-col items-start pointer">
+                        <p class="font-semibold pointer">autominer</p>
+                        <p class="text-left pointer">permet de miner automatiquement du bitcoin</p>
+                        <p class="text-sm text-left pointer">prix : <span id="autominerPrice"></span> btc</p>
                     </div>
                 </button>
             </div>

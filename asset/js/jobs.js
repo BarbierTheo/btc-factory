@@ -17,8 +17,8 @@ function showGame() {
         document.getElementById('jobInterface').innerHTML = `
                     <div class="flex flex-col justify-center self-center h-full gap-8 text-center">
                         <p class="text-3xl font-bold self-center">FREE BITCOIN</p>
-                        <button class="self-center cursor-pointer" id="miner"><img src="./asset/img/icons/Warning.png"
-                        alt="" class="w-[8rem]"></button>
+                        <button class="self-center" id="miner"><img src="./asset/img/icons/Warning.png"
+                        alt="" class="w-[8rem] pointer"></button>
                         <p>clics : <span id="clicksMiner">0</span></p>
                         <p><span id="btcGenerate">0</span> bitcoins générés</p>
                         <p>encore <span id="stillMiner">???</span> clics pour un bitcoin complet !</p>
