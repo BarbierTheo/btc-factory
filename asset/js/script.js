@@ -1,22 +1,9 @@
-function refreshdom() {
 
-    document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
-    document.getElementById('autominerCount').innerText = round(autominer)
-    document.getElementById('autominerPrice').innerText = round(autominerPrice)
-    document.getElementById('autominerStats').innerText = round(autominerTimer + (autominer * (0.01 * bonus)))
-    document.getElementById('bitcoinsPerSec').innerText = round(autominerTimer + (autominer * (0.01 * bonus)))
-    document.getElementById('bonusPrice1').innerText = round(bonusPrice)
-
-}
-
-function round(element) {
-    return Math.round(element * 10000) / 10000
-}
 
 if (localStorage.getItem('bitcoin') == null || localStorage.getItem('bitcoin') == "NaN") {
     bitcoin = 0
 } else {
-    bitcoin = round(localStorage.getItem('bitcoin'))
+    bitcoin = Number(localStorage.getItem('bitcoin'))
 }
 
 console.log('BITCOIN : ' + bitcoin)
@@ -42,11 +29,12 @@ let autominer = 0
 if (localStorage.getItem('autominer') == null || localStorage.getItem('autominer') == "NaN") {
     autominer = 0
 } else {
-    autominer = round(localStorage.getItem('autominer'))
+    autominer = Number(localStorage.getItem('autominer'))
 }
 
-let autominerTimer = (0.004 * autominer)
+let autominerWork = 1
 let autominerBonus = 1
+let autominerTimer = (autominerWork * autominer)
 
 function automine() {
     if (autominer >= 1) {
@@ -68,7 +56,7 @@ if (autominer > 10) {
 }
 
 
-let autominerPrice = 0.01 + (0.05 * autominer) * multiplierAutominer
+let autominerPrice = 10 + (autominer)*multiplierAutominer
 
 function buyAutominer() {
 
@@ -77,13 +65,13 @@ function buyAutominer() {
 
 
 
-    if (bitcoin > autominerPrice) {
+    if (bitcoin >= autominerPrice) {
         autominer = (autominer + 1)
         bitcoin = bitcoin - autominerPrice
         document.getElementById('bitcoinShow').innerHTML = round(bitcoin)
         localStorage.setItem('autominer', autominer)
-        autominerTimer = (0.004 * autominer)
-        autominerPrice = 0.01 + (0.05 * autominer) * multiplierAutominer
+        autominerPrice = 10 + (autominer)*multiplierAutominer
+        autominerTimer = (autominerWork * autominer)
     }
 
     refreshdom()
@@ -99,16 +87,20 @@ document.getElementById('autominer').addEventListener('click', buyAutominer)
 
 // BONUS TOTAL
 
+let totalItems = autominerTimer
+
 let bonus = 0
 
-let totalItems = autominerTimer
-let totalBonus = totalItems * (0.01 * (bonus))
+let totalBonus = totalItems * (0.1 * (bonus))
 
 function totalBonusAdd() {
+
+    totalItems = autominerTimer
+    totalBonus = totalItems * (0.1 * (bonus))
     bitcoin = bitcoin + totalBonus
 }
 
-let bonusPrice = 0.1
+let bonusPrice = 100
 
 // ACHAT BONUS
 
@@ -118,7 +110,7 @@ function buyTotalBonus() {
         bitcoin = bitcoin - bonusPrice
         bonus++
         totalItems = autominerTimer
-        totalBonus = totalItems * (0.01 * (bonus))
+        totalBonus = totalItems * (0.1 * (bonus))
     }
     refreshdom()
     // console.log(totalBonus)
@@ -139,6 +131,16 @@ setInterval(function () {
     totalBonusAdd()
 }, 3000)
 
+function refreshdom() {
+
+    document.getElementById('bitcoinShow').innerHTML = bitcoin
+    document.getElementById('autominerCount').innerText = autominer
+    document.getElementById('autominerPrice').innerText = autominerPrice
+    document.getElementById('autominerStats').innerText = autominerTimer + (autominer * (0.1 * bonus))
+    document.getElementById('bitcoinsPerSec').innerText = autominerTimer + totalBonus
+    document.getElementById('bonusPrice1').innerText = bonusPrice
+
+}
 
 
 refreshdom()
@@ -147,7 +149,7 @@ refreshdom()
 
 function saveBitcoin() {
     console.log('save')
-    localStorage.setItem('bitcoin', round(bitcoin))
+    localStorage.setItem('bitcoin', bitcoin)
 }
 
 saveBitcoin()
